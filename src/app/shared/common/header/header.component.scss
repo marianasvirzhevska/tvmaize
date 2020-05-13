@@ -1,0 +1,44 @@
+@import 'variables';
+
+.header {
+    background-color: $black-bg;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__right {
+        flex: 0 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__search {
+        flex: 0 100%;
+    }
+
+    &__login {
+        margin-left: 30px;
+    }
+
+    &__login-btn {
+        background: none;
+        border: 1px solid $dark-grey-1;
+        padding: 8px 20px;
+        font-size: $font-small;
+        color: $dark-grey;
+
+        &:hover {
+            border: 1px solid $grey-font;
+            color: $white;
+        }
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+}

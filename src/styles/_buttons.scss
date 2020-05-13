@@ -1,0 +1,73 @@
+@import 'variables';
+
+.button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    padding: 13px 24px;
+    font-size: $font-main;
+    color: $white;
+
+        &.small {
+            border-radius: 2px;
+            padding: 10px 24px;
+            font-size: $font-main;
+        }
+
+        &.big {
+            padding: 18px 35px;
+            font-size: $font-middle;
+        }
+
+        &.primary {
+            background: $blue-gradient;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &.secondary {
+            background-color: $red-gradient;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &.danger {
+            background-color: $accent-red;
+            &:hover {
+                background-color: $hover-red;
+            }
+        }
+
+        &.outlined {
+            border: 1px solid;
+            background-color: transparent;
+            &.primary {
+                color: $blue;
+                border-color: $blue;
+                &:hover {
+                    background-color: $blue-hover;
+                }
+            }
+
+            &.secondary {
+                color: $accent-red;
+                border-color: $accent-red;
+                &:hover {
+                    background-color: $hover-red;
+                }
+            }
+
+            &.danger {
+                color: $red;
+                border-color: $red;
+                &:hover {
+                    // background-color: $hover-red;
+                }
+            }
+        }
+}

@@ -1,0 +1,24 @@
+<div class="search">
+    <div class="search__wrapper">
+        <input type="text"
+            [ngClass]="{visible: showInput}"
+            [(ngModel)]="searchString"
+            (ngModelChange)="onSearch($event)"
+            placeholder="Search TVMaze"
+            class="search__input">
+        <button class="search__show"
+            [ngClass]="{visible: showInput}"
+            mat-icon-button
+            aria-label="Search"
+            (click)="handleShowInput()">
+            <mat-icon class="search-icon">search</mat-icon>
+        </button>
+        <button class="search__clear"
+            [ngClass]="{visible: showInput}"
+            mat-icon-button
+            aria-label="Clear"
+            (click)="clear()">
+            <mat-icon class="clear-icon">clear</mat-icon>
+        </button>
+    </div>
+</div>
