@@ -1,0 +1,111 @@
+@import 'variables';
+
+.register {
+    width: 100%;
+    min-height: calc(100vh - 63px - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media(max-width: 480px) {
+        padding: 20px 0;
+        min-height: calc(100vh - 53px - 122px);
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__info {
+        flex: 0 40%;
+
+        @media(max-width: 905px) {
+            display: none;
+        }
+    }
+
+    &__form-wrapper {
+        flex: 0 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media(max-width: 905px) {
+            flex: 1 100%;   
+        }
+    }
+
+    &__title {
+        font-size: $font-heading;
+        font-weight: 600;
+        color: $black;
+        margin: 0 0 20px;
+
+        @media (max-width: 480px) {
+            margin: 0 0 10px;
+            font-size: $font-subheading;
+        }
+    }
+
+    &__subtitle {
+        font-size: $font-heading-1;
+        font-weight: 300;
+        color: $black;
+        margin: 0 0 30px;
+
+        @media (max-width: 480px) {
+            margin: 0 0 10px;
+            font-size: $font-large;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    &__login-link {
+        margin-top: 45px;
+        color: $black;
+        font-size: $font-main;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $grey-placeholder-1;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+            color: $blue-hover;
+        }
+    }
+
+    &__info-list {
+        margin: 16px 0;
+    }
+    
+    &__info-item {
+        margin: 8px 0;
+        padding-left: 30px;
+        position: relative;
+        font-weight: 300;
+
+        &::before {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            display: block;
+            content: ' ';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid $grey-placeholder-2;
+        }
+    }
+}
