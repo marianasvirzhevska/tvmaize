@@ -8,10 +8,14 @@
         height: 33px;
         width: 50%;
         position: relative;
+
+        @media(max-width: 480px) {
+            width: 100%;
+        }
     }
 
     &__input {
-        background-color: transparent;
+        background-color: $black-bg;
         border-radius: 4px;
         font-size: $font-small;
         outline: none;
@@ -32,6 +36,13 @@
             padding: 8px 20px;
             opacity: 1;
             width: 100%;
+        }
+
+        @media(max-width: 480px) {
+            &.visible {
+                right: -74px;
+                width: calc(100% + 90px + 74px);
+            }
         }
     }
 
@@ -66,6 +77,14 @@
             -webkit-transition: opacity 0.4s ease-in-out;
             transition: opacity 0.4s ease-in-out;
             opacity: 1;
+        }
+
+        @media(max-width: 480px) {
+            right: -74px;
+            z-index: -1;
+            &.visible {
+                z-index: 2;
+            }
         }
     }
 }
