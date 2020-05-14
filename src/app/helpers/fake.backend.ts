@@ -18,7 +18,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         const { url, method, body } = request;
 
         let users: User[] = [
-            { id: 1, username: 'test', password: 'test', email: 'test@email.com' }
+            { id: 1, username: 'User', password: 'password', email: 'test@email.com' }
         ];
 
         const storageUsers = localStorage.getItem('users');
@@ -30,7 +30,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         return of(null).pipe(mergeMap(() => {
 
             if (url.endsWith('/users/authenticate') && method === 'POST') {
-                const user = users.find(x => x.username === body.username && x.password === body.password);
+                const user = users.find(x => {
+                    return(x.username === body.username || x.email === body.username) && x.password === body.password;
+                });
                 if (!user) return error('Username or password is incorrect');
                 return ok({
                     id: user.id,

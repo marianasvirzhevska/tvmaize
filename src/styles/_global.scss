@@ -53,3 +53,22 @@ img {
 .mat-icon.clear-icon {
   font-size: 18px;
 }
+
+.mat-button-base {
+
+  &.middle {
+    border-radius: 2px;
+    padding: 4px 24px;
+    font-size: $font-main;
+  }
+
+  &.big {
+      padding: 9px 35px;
+      font-size: $font-middle;
+  }
+}
+
+// All errors color
+.error {
+  color: $error;
+}

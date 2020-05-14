@@ -1,1 +1,39 @@
-<p>login-page works!</p>
+<div class="login">
+    <div class="container login__container">
+        <h1 class="login__title">Login</h1>
+        <h3 class="login__subtitle"> with your TVmaze account</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form">
+            <div class="form-group">
+                <input
+                    type="text"
+                    required
+                    formControlName="username"
+                    class="form-control common-input"
+                    placeholder="Username or email"/>
+                <div *ngIf="usernameControl.hasError('required')" class="error">Username/Email field is required</div>
+            </div>
+            <div class="form-group">
+                <input
+                    type="password" 
+                    required
+                    formControlName="password" 
+                    class="form-control common-input"
+                    placeholder="Password"/>
+                <div class="error">
+                    <div *ngIf="passwordControl.hasError('required')">Password field is required</div>
+                    <div *ngIf="passwordControl.hasError('minlength')">Password must be at least 6 characters</div> 
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" 
+                    mat-flat-button color="accent"
+                    class="big">Login</button>
+            </div>
+            <div *ngIf="error" class="error">{{error}}</div>
+            <div class="login__register-link">
+                Don't have an account?
+                <a class="login__link" routerLink="/register">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
