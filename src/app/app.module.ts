@@ -19,6 +19,8 @@ import { FooterComponent } from './shared/common/footer/footer.component';
 import { FormInputComponent } from './shared/common/form-components/form-input/form-input.component';
 import { SearchComponent } from './shared/common/header/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScheduleComponent } from './main-page/components/schedule/schedule.component';
+import { ScheduleItemComponent } from './main-page/components/schedule-item/schedule-item.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     FormInputComponent,
     SearchComponent,
+    ScheduleComponent,
+    ScheduleItemComponent,
 
   ],
   imports: [

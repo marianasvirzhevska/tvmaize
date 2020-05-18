@@ -1,0 +1,16 @@
+<div class="schedule">
+    <h2 class="schedule__title">Schedule for {{today}}</h2>
+    <div *ngIf="!loading" class="schedule__list-wrapper">
+        <ul *ngIf="shows.length; else noShows" class="schedule__list">
+            <li *ngFor="let show of shows"
+                class="schedule__item">
+                <app-schedule-item [show]="show"></app-schedule-item>
+            </li>
+        </ul>
+
+        <ng-template #noShows>
+            <p class="schedule__not-found">Shows not found</p>
+        </ng-template>
+    </div>
+    <div *ngIf="loading" class="loading">Loading...</div>
+</div>

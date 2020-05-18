@@ -1,0 +1,25 @@
+@import 'variables';
+
+.schedule {
+
+    &__title {
+        font-weight: 400;
+    }
+
+    &__list-wrapper {
+        padding: 20px 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    &__item {
+        flex: 0 20%;
+        padding: 10px;
+        margin: 0 0 30px;
+    }
+
+}

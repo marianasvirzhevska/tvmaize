@@ -1,0 +1,102 @@
+@import 'variables';
+
+.show {
+    $context: &;
+    position: relative;
+    text-decoration: none;
+
+    &__image {
+        opacity: 1;
+        transition: opacity 80ms;
+    }
+
+    &__screen {
+        position: relative;
+        transition: transform .4s, -webkit-transform .4s, -o-transform .4s;
+
+        &:after {
+            content: ' ';
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 3px);
+            opacity: 0;
+            transition: opacity 80ms;
+            background-color: #122427;
+        }
+    }
+
+    &__info {
+        margin: 10px 0 0;
+        max-height: 38px;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: $font-middle;
+        color: $black;
+    }
+
+    &__subtitle {
+        color: $black;
+        font-weight: 300;
+        font-size: $font-table;
+        text-overflow: ellipsis;
+    }
+
+    &__more-info {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+        opacity: 0;
+        padding: 16px;
+        color: $white;
+        font-size: $font-small;
+        transition: opacity 80ms;
+    }
+
+    &__type {
+        padding: 6px 0;
+    }
+
+    &__rate {
+        font-weight: 600;
+        font-size: $font-middle;
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover {
+        #{$context} {
+            &__screen {
+                transform: scale(1.045);
+                transition: transform 80ms, -webkit-transform 80ms, -o-transform 80ms;
+
+                &::after {
+                    opacity: 0.6;
+                    transition: opacity 80ms;
+                }
+            }
+
+            &__image {
+                opacity: 0.8;
+                transition: opacity 80ms;
+            }
+
+            &__title {
+                color: $blue-hover;
+                text-decoration: underline;
+            }
+
+            &__more-info {
+                opacity: 1;
+                transition: opacity 80ms;
+            }
+        }
+    }
+}

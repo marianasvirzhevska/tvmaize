@@ -1,0 +1,16 @@
+<a href="" class="show">
+    <div class="show__screen">
+        <img [src]="show.show.image.medium" class="show__image"/>
+        <div class="show__more-info">
+            <div *ngIf="show.show.rating.average" class="show__rate">
+                <mat-icon class="rate-icon">stars</mat-icon><span>{{ show.show.rating.average }}</span>
+            </div>
+            <div class="show__type">{{ premiered }}, {{ country }}, {{ show.show.type }}</div>
+            <div class="show__runtime">{{ show.runtime }} minutes</div>
+        </div>
+    </div>
+    <div class="show__info">
+        <div class="show__title">{{ show.show.name }}</div>
+        <div class="show__subtitle">{{ show.name }}</div>
+    </div>
+</a>
